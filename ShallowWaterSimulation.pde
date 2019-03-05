@@ -13,7 +13,7 @@ void setup() {
     
     // TODO: I'm not sure what the momentum value should be
     for(int i = cellCount - 1; i >= 0; i--) {
-        cells[i] = new WaterCell(i + 2, 20);
+        cells[i] = new WaterCell((i + 2) * 0.25, 20);
         
         // the cell that appears to the right of the current cell
         if (i != cellCount - 1) {
@@ -31,7 +31,7 @@ void draw() {
     
     // updates
     
-    for(int j = 0; j < 100; j++) {
+    for(int j = 0; j < 200; j++) {
     for(int i = 0; i < cellCount; i++) {
         cells[i].update(0.002);
     }
@@ -39,10 +39,14 @@ void draw() {
     
     println("height: " + cells[10].height);
     println("momentum: " + cells[10].momentum);
+    println("midpointheight: " + cells[10].midpointHeight);
+    println("midpointmomentum: " + cells[10].midpointMomentum);
+    println("nextcell height: " + cells[10].nextCell.height);
+    println("nextcell momentum " + cells[10].nextCell.momentum);
     
     // rendering
     fill(255);
     for(int i = 0; i < cellCount; i++) {
-        rect(i * dx, maxHeight - cells[i].height, dx, cells[i].height);
+        rect(i * dx, maxHeight - (cells[i].height * 3), dx, cells[i].height * 3);
     }
 }
