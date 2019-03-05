@@ -16,6 +16,12 @@ class WaterCell {
     }
     
     void update(float dt) {
+        midpointHeight = (height + nextCell.height) / 2 - (dt / 2) * (momentum + nextCell.momentum) / dx;
+        midpointMomentum = (momentum + nextCell.momentum) / 2 - (dt/ 2) * (sqrt(nextCell.momentum / nextCell.height) + 0.5 * gravity * sqrt(nextCell.height) - 
+            sqrt(midpointHeight) / height - 0.5 * gravity * sqrt(height)) / dx;
         
+        nextCell.height -= dt * (nextCell.momentum - momentum) / dx;
+        nextCell.momentum -= dt * (sqrt(nextCell.momentum) / nextCell.height + .5 * gravity * sqrt(nextCell.midpointHeight) - 
+            sqrt(midpointMomentum) / midpointHeight - 0.5 * gravity * sqrt(midpointHeight)) / dx;
     }
 }
