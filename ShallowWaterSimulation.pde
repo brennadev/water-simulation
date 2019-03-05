@@ -1,7 +1,7 @@
 // Copyright 2019 Brenna Olson. You may download this code for informational purposes only.
 
 final int cellCount = 20;
-final float dx = 1;
+final float dx = 20;
 final float maxHeight = 100;
 
 WaterCell[] cells = new WaterCell[cellCount]; 
@@ -18,8 +18,15 @@ void setup() {
 
 void draw() {
     background(0);
+    
+    // updates
+    for(int i = 0; i < cellCount; i++) {
+        
+    }
+    
+    // rendering
     fill(255);
     for(int i = 0; i < cellCount; i++) {
-        rect(i * dx * 20, maxHeight - cells[i].height, dx * 20, cells[i].height);
+        rect(i * dx, maxHeight - cells[i].height, dx, cells[i].height);
     }
 }
