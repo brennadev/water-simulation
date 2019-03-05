@@ -16,18 +16,6 @@ class WaterCell {
     }
     
     void update(float dt) {
-        /*if (height == Float.NaN) {
-            println("height NaN");
-        }
-        
-        if (nextCell.height == Float.NaN) {
-            println("nextcell height NaN");
-        }
-        
-        if (midpointHeight == Float.NaN) {
-            println("midpointheight NaN");
-        }*/
-        
         midpointHeight = (height + nextCell.height) / 2 - (dt / 2.0) * (momentum + nextCell.momentum) / dx;
         midpointMomentum = (momentum + nextCell.momentum) / 2 - (dt/ 2.0) * (sqrt(nextCell.momentum) / nextCell.height + 0.5 * gravity * sqrt(nextCell.height) - 
             sqrt(midpointHeight) / height - 0.5 * gravity * sqrt(height)) / dx;

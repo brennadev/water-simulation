@@ -32,7 +32,7 @@ void draw() {
     // updates
     
     for(int j = 0; j < 200; j++) {
-    for(int i = 0; i < cellCount; i++) {
+    for(int i = cellCount - 1; i >= 0; i--) {
         cells[i].update(0.002);
     }
     }
