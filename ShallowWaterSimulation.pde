@@ -11,8 +11,17 @@ void setup() {
     size(600, 400, P2D);
     
     // TODO: I'm not sure what the momentum value should be
-    for(int i = 0; i < cellCount; i++) {
+    for(int i = cellCount - 1; i >= 0; i--) {
         cells[i] = new WaterCell(i + 2, 1);
+        
+        // the cell that appears to the right of the current cell
+        if (i != cellCount - 1) {
+            cells[i].nextCell = cells[i + 1];
+            
+        // when at the rightmost cell, the next cell just reuses its own data - so it holds a reference to itself    
+        } else {
+            cells[i].nextCell = cells[i];
+        }
     }
 }
 
