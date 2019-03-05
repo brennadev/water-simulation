@@ -6,4 +6,7 @@ class WaterCell {
         this.height = height;
         this.momentum = momentum;
     }
+    
+    void update(float dt) {
+    }
 }
