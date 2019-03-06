@@ -31,21 +31,33 @@ void draw() {
     
     // updates
     
-    for(int j = 0; j < 200; j++) {
+    //for(int j = 0; j < 2; j++) {
     for(int i = cellCount - 1; i >= 0; i--) {
         cells[i].update(0.002);
     }
-    }
+    //}
     
+    
+    println("cell 2:");
+    println("height: " + cells[2].height);
+    println("momentum: " + cells[2].momentum);
+    println("midpointheight: " + cells[2].midpointHeight);
+    println("midpointmomentum: " + cells[2].midpointMomentum);
+    println("nextcell height: " + cells[2].nextCell.height);
+    println("nextcell momentum " + cells[2].nextCell.momentum);
+    println();
+    
+    println("cell 10:");
     println("height: " + cells[10].height);
     println("momentum: " + cells[10].momentum);
     println("midpointheight: " + cells[10].midpointHeight);
     println("midpointmomentum: " + cells[10].midpointMomentum);
     println("nextcell height: " + cells[10].nextCell.height);
     println("nextcell momentum " + cells[10].nextCell.momentum);
+    println();
     
     // rendering
-    fill(255);
+    fill(0, 220, 255);
     for(int i = 0; i < cellCount; i++) {
         rect(i * dx, maxHeight - (cells[i].height * 3), dx, cells[i].height * 3);
     }
