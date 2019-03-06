@@ -31,11 +31,15 @@ void draw() {
     
     // updates
     
-    //for(int j = 0; j < 2; j++) {
+    for(int j = 0; j < 10; j++) {
     for(int i = cellCount - 1; i >= 0; i--) {
-        cells[i].update(0.002);
+        cells[i].updateHalfStep(0.002);
     }
-    //}
+    
+    for(int i = cellCount - 1; i >= 0; i--) {
+        cells[i].updateFullStep(0.002);
+    }
+    }
     
     
     println("cell 2:");
