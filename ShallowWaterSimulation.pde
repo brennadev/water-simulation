@@ -48,20 +48,6 @@ void draw() {
         }
     }
     
-    
-    println("cell 2:");
-    println("height: " + cells[2].height);
-    println("momentum: " + cells[2].momentum);
-    println("midpointheight: " + cells[2].midpointHeight);
-    println("midpointmomentum: " + cells[2].midpointMomentum);
-    println("nextcell height: " + cells[2].nextCell.height);
-    println("nextcell momentum " + cells[2].nextCell.momentum);
-    println();
-    
-
-    
-
-    
     // rendering
     fill(0, 220, 255);
     for(int i = 0; i < cellCount; i++) {
