@@ -11,9 +11,7 @@ WaterCell[] cells = new WaterCell[cellCount];
 void setup() {
     size(600, 400, P2D);
     
-    // TODO: I'm not sure what the momentum value should be
     for(int i = cellCount - 1; i >= 0; i--) {
-        //cells[i] = new WaterCell((i + 2) * 0.25, 20);
         cells[i] = new WaterCell(3, 0);
         
         // the cell that appears to the right of the current cell
@@ -27,10 +25,6 @@ void setup() {
     }
     
     cells[10].height = 8;
-    
-    // not a smooth transition as it spread out
-    // maybe issues with dividing by really small numbers
-    // infinity is usually dividing a really small number
 }
 
 void draw() {
