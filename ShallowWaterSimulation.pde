@@ -24,6 +24,7 @@ void setup() {
         }
     }
     
+    // make one cell much higher so a wave happens
     cells[10].height = 8;
 }
 
@@ -37,14 +38,6 @@ void draw() {
     // of the way I have the WaterCell class set up - not sure if that's the correct thing to do though
     
     for(int j = 0; j < 100; j++) {
-        /*for(int i = cellCount - 1; i >= 0; i--) {
-            cells[i].updateHalfStep(0.002);
-        }
-        
-        for(int i = cellCount - 2; i >= 0; i--) {
-            cells[i].updateFullStep(0.002);
-        }*/
-        
         for(int i = 0; i < cellCount; i++) {
             cells[i].updateHalfStep(0.002);
         }
@@ -65,33 +58,9 @@ void draw() {
     println("nextcell momentum " + cells[2].nextCell.momentum);
     println();
     
-    println("cell 9:");
-    println("height: " + cells[9].height);
-    println("momentum: " + cells[9].momentum);
-    println("midpointheight: " + cells[9].midpointHeight);
-    println("midpointmomentum: " + cells[9].midpointMomentum);
-    println("nextcell height: " + cells[9].nextCell.height);
-    println("nextcell momentum " + cells[9].nextCell.momentum);
-    println();
+
     
-    println("cell 10:");
-    println("height: " + cells[10].height);
-    println("momentum: " + cells[10].momentum);
-    println("midpointheight: " + cells[10].midpointHeight);
-    println("midpointmomentum: " + cells[10].midpointMomentum);
-    println("nextcell height: " + cells[10].nextCell.height);
-    println("nextcell momentum " + cells[10].nextCell.momentum);
-    println();
-    
-    println("cell 11:");
-    println("height: " + cells[11].height);
-    println("momentum: " + cells[11].momentum);
-    println("midpointheight: " + cells[11].midpointHeight);
-    println("midpointmomentum: " + cells[11].midpointMomentum);
-    println("nextcell height: " + cells[11].nextCell.height);
-    println("nextcell momentum " + cells[11].nextCell.momentum);
-    println();
-    
+
     
     // rendering
     fill(0, 220, 255);
