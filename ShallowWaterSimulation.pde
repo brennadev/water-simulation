@@ -1,9 +1,9 @@
 // Copyright 2019 Brenna Olson. You may download this code for informational purposes only.
 
-final int cellCount = 20;
-final float dx = 20;
+final int cellCount = 100;
+final float dx = 5;
 final float maxHeight = 100;
-final float gravity = 9.8;
+final float gravity = 3;
 
 WaterCell[] cells = new WaterCell[cellCount]; 
 
@@ -26,7 +26,7 @@ void setup() {
         }
     }
     
-    cells[10].height = 10;
+    cells[10].height = 8;
     
     // not a smooth transition as it spread out
     // maybe issues with dividing by really small numbers
@@ -42,7 +42,7 @@ void draw() {
     // the momentum and height values eventually go negative, no matter whether I go through forward or backward. I'm not handling anything with the edges because
     // of the way I have the WaterCell class set up - not sure if that's the correct thing to do though
     
-    for(int j = 0; j < 30; j++) {
+    for(int j = 0; j < 100; j++) {
         /*for(int i = cellCount - 1; i >= 0; i--) {
             cells[i].updateHalfStep(0.002);
         }
